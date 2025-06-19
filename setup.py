@@ -20,6 +20,10 @@ def main():
     if corePackages == "y":
         core.install()
         print("Done.")
+    devPackages = input("[+] Install Development Packages? [y/n]")
+    if devPackages == "y":
+        development.install()
+        print("Done.")
 
 if __name__ == "__main__":
     main()
