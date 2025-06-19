@@ -1,10 +1,10 @@
-from setup import run, install_packages
+from .service_module import run, install_packages
 
-general_packages = {
-    "btop",
-    "htop",
-    "curl",
-    "wget"
-}
-
-install_packages(general_packages)
+def install():
+    general_packages = {
+        "btop",
+        "htop",
+        "curl",
+        "wget"
+    }
+    install_packages(general_packages)

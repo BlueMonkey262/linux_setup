@@ -1,6 +1,7 @@
 from pathlib import Path
-from setup import run, install_packages
 import dbus
+from .service_module import run, install_packages
+import os
 
 def set_kde_wallpaper(filepath, plugin='org.kde.image'):
     """Sets the wallpaper in KDE Plasma via dbus."""
@@ -33,14 +34,7 @@ def enable_dark_mode():
     print("[+] Applying KDE dark mode...")
 
     # Apply the full Breeze Dark look-and-feel
-    run("lookandfeeltool -a org.kde.breezedark")
+    run("lookandfeeltool -a org.kde.breezedark.desktop")
 
     # Restart plasmashell to apply changes immediately
-    run("kquitapp5 plasmashell || true")
-    run("plasmashell &")
-
-    print("[+] KDE dark mode enabled.")
-
-enable_dark_mode()
-set_kde_wallpaper(Path(__file__).parent / "wallpaper.jpg")
 
