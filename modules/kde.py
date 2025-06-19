@@ -38,3 +38,5 @@ def enable_dark_mode():
 
     # Restart plasmashell to apply changes immediately
 
+    print("[+] KDE dark mode enabled.")
+
